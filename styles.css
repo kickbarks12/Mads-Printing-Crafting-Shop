@@ -1059,3 +1059,27 @@ footer p {
         }
     }
 }
+/* Extra smoothness when rotating phone */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent layout shift on rotation */
+body {
+    min-height: 100vh;
+}
+
+/* Make sure grids adapt instantly in landscape */
+@media (orientation: landscape) and (max-width: 900px) {
+    .gallery-grid,
+    .reviews-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .review-card,
+    .gallery-item img {
+        height: auto; /* let images breathe in landscape */
+        min-height: 220px;
+    }
+}
