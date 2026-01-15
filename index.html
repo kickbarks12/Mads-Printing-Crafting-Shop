@@ -162,26 +162,25 @@
 
           <!-- Contact Form -->
           <div class="contact-form">
-            <form id="contactForm">
-              <input type="text" name="name" placeholder="Your Name" required />
+            <form action="https://api.web3forms.com/submit" method="POST">
               <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                required
+                type="hidden"
+                name="access_key"
+                value="64b3b2d8-fba1-4cd0-8d4c-9047cd470716"
               />
+              <input type="text" name="name" placeholder="Full Name" required />
               <input
                 type="email"
                 name="email"
-                placeholder="Your Email (optional)"
+                placeholder="Your Email"
+                required
               />
               <textarea
                 name="message"
-                placeholder="Tell us about your project..."
-                rows="5"
+                placeholder="Your Message"
                 required
               ></textarea>
-              <button type="submit" class="btn">Send Message</button>
+              <button type="submit">Submit Form</button>
             </form>
             <p id="formMessage" style="margin-top: 1rem; font-weight: bold"></p>
           </div>
