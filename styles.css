@@ -1,4 +1,4 @@
-/* Reset some default browser styles */
+/* Reset some default browser styles
 * {
     margin: 0;
     padding: 0;
@@ -290,5 +290,772 @@ footer p {
     
     .contact {
         padding: 3rem 0;
+    }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(44, 62, 80, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+}
+
+.logo span {
+  color: #e74c3c;           /* red accent for "Printing & Crafting" */
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: #e74c3c;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #e74c3c;
+}
+
+.btn-contact {
+  background: #e74c3c;
+  padding: 0.6rem 1.8rem;
+  border-radius: 50px;
+  color: white !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.35);
+}
+
+/* Mobile menu (you can add hamburger later) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* → you'll need JS + hamburger for mobile */
+  }
+}
+.about {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.about-image img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+.wide-reviews-carousel {
+    max-width: 100%;          /* Full width on all devices */
+    padding: 0 1.5rem;
+}
+
+.review-card {
+    padding: 2.5rem 2rem;     /* Generous padding inside card */
+    border-radius: 16px;
+}
+
+.review-card p {
+    font-size: 1.25rem;       /* Readable on phone */
+    line-height: 1.7;
+}
+
+.reviewer {
+    font-size: 1.15rem;
+}
+
+/* Key mobile fix: Always show 1 card on phones */
+@media (max-width: 768px) {
+    .review-card {
+        min-width: 100%;      /* Force single card view */
+        padding: 2rem 1.8rem; /* Slightly less but still comfy */
+    }
+    
+    .review-card p {
+        font-size: 1.3rem;    /* Slightly larger for phone reading */
+    }
+    
+    .stars {
+        font-size: 2.2rem;
+    }
+    
+    .carousel-prev, .carousel-next {
+        font-size: 3rem;      /* Large touch targets */
+        padding: 14px 18px;
+    }
+    
+    .carousel-dot {
+        width: 16px;
+        height: 16px;
+        margin: 0 12px;
+    }
+}
+
+
+.gallery-carousel {
+    max-width: 100%;          /* Full width always */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 400px;            /* Good height on desktop */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .carousel-slide img {
+        height: 320px;        /* Taller & more immersive on phone */
+    }
+    
+    .carousel-prev, .carousel-next {
+        font-size: 2.8rem;    /* Bigger for easy tapping */
+        padding: 12px 16px;
+        background: rgba(0,0,0,0.6); /* Darker for better visibility */
+    }
+    
+    .carousel-dot {
+        width: 14px;
+        height: 14px;
+        margin: 0 10px;
+    }
+} 
+
+/* ============================================= */
+/*           GLOBAL RESPONSIVE IMPROVEMENTS      */
+/* ============================================= */
+
+/* Better container padding on mobile */
+.container {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+@media (min-width: 992px) {
+    .container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+/* Hero - more balanced on mobile */
+.hero {
+    padding: 12rem 1.5rem 8rem;
+    min-height: 70vh;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+}
+
+.hero p {
+    font-size: 1.35rem;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 8rem 1rem 6rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+    
+    .hero p {
+        font-size: 1.15rem;
+    }
+}
+
+/* Services - better card spacing & size on mobile */
+.services-grid {
+    gap: 1.8rem;
+}
+
+.service-card {
+    padding: 2.2rem 1.8rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+}
+
+.service-card p {
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        padding: 1.8rem 1.5rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.45rem;
+    }
+}
+
+/* About Us - stack image/text nicely on mobile */
+.about-content {
+    gap: 2.5rem;
+}
+
+.about-text p {
+    font-size: 1.08rem;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-image img {
+        border-radius: 12px;
+        max-height: 320px;
+        object-fit: cover;
+    }
+}
+
+/* Contact - better form spacing on mobile */
+.contact-grid {
+    gap: 3rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1.1rem 1.3rem;
+    font-size: 1.05rem;
+}
+
+.contact-form button {
+    padding: 1.1rem;
+    font-size: 1.15rem;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        gap: 3.5rem;
+    }
+}
+
+/* Footer - simpler & centered on mobile */
+footer {
+    padding: 2.5rem 1rem;
+}
+
+footer p {
+    font-size: 0.95rem;
+}
+
+/* ============================================= */
+/*     FINAL RESPONSIVE GALLERY & REVIEWS        */
+/* ============================================= */
+
+/* Gallery */
+.gallery-carousel {
+    max-width: 1450px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.carousel-slide img {
+    height: 460px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 992px) {
+    .carousel-slide {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .carousel-slide {
+        flex: 0 0 calc(33.333% - 1.5rem);
+    }
+}
+
+@media (max-width: 991px) {
+    .carousel-slide {
+        flex: 0 0 100%;
+    }
+    .carousel-slide img {
+        height: 300px;
+        border-radius: 8px;
+    }
+}
+
+/* Reviews */
+.wide-reviews-carousel {
+    max-width: 1450px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.review-card {
+    padding: 2.6rem 2.3rem;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.review-card p {
+    font-size: 1.32rem;
+    line-height: 1.78;
+}
+
+@media (min-width: 992px) {
+    .review-card {
+        flex: 0 0 calc(50% - 1.25rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .review-card {
+        flex: 0 0 calc(33.333% - 1.67rem);
+    }
+}
+
+@media (max-width: 991px) {
+    .review-card {
+        flex: 0 0 100%;
+        padding: 2.2rem 1.9rem;
+    }
+    
+    .review-card p {
+        font-size: 1.38rem;
+        line-height: 1.82;
+    }
+    
+    .stars {
+        font-size: 2.6rem;
+    }
+}
+/* ============================================= */
+/* GALLERY - SMALLER IMAGES ON DESKTOP          */
+/* ============================================= */
+
+/* Base styles for carousel */
+.gallery-carousel {
+    max-width: 1400px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+    overflow: hidden;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 280px;              /* Smaller height on desktop */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide img:hover {
+    transform: scale(1.05);
+}
+
+/* Desktop: Show 3 images side by side (smaller size) */
+@media (min-width: 992px) {
+    .carousel-slide {
+        flex: 0 0 calc(33.333% - 1.2rem); /* 3 images visible */
+    }
+}
+
+/* Larger desktop: Show 4 images (even smaller) */
+@media (min-width: 1400px) {
+    .carousel-slide {
+        flex: 0 0 calc(25% - 1.5rem); /* 4 images visible */
+    }
+}
+
+/* Mobile: Full-width, taller image for better viewing */
+@media (max-width: 991px) {
+    .carousel-slide {
+        flex: 0 0 100%;
+    }
+    
+    .carousel-slide img {
+        height: 320px;              /* Taller on phone for visual impact */
+        border-radius: 8px;
+    }
+}
+
+/* Make dots bigger on mobile for easy tapping */
+@media (max-width: 768px) {
+    .carousel-dot {
+        width: 16px;
+        height: 16px;
+        margin: 0 12px;
+    }
+}
+/* Gallery Section - Simple Responsive Grid */
+.gallery {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.8rem;
+    margin-top: 2.5rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .gallery {
+        padding: 4rem 0;
+    }
+    
+    .gallery-grid {
+        gap: 1.4rem;
+    }
+    
+    .gallery-item img {
+        height: 340px;           /* Slightly taller on phones for better view */
+    }
+}
+
+/* Reviews Section – Simple Responsive Grid */
+.reviews {
+    padding: 5rem 0;
+    background-color: white;
+    text-align: center;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.review-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    text-align: center;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.review-card .stars {
+    color: #f59e0b;
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.review-card p {
+    font-size: 1.28rem;
+    line-height: 1.75;
+    margin-bottom: 1.3rem;
+    color: #1f2937;
+    font-style: italic;
+}
+
+.review-card .reviewer {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* Mobile – stacked cards, larger text for readability */
+@media (max-width: 768px) {
+    .reviews {
+        padding: 4rem 0;
+    }
+    
+    .reviews-grid {
+        gap: 1.8rem;
+    }
+    
+    .review-card {
+        padding: 2.2rem 1.8rem;
+    }
+    
+    .review-card p {
+        font-size: 1.35rem;
+        line-height: 1.8;
+    }
+    
+    .review-card .stars {
+        font-size: 2.6rem;
+    }
+}
+/* ============================================= */
+/*          RESPONSIVE NAVIGATION BAR            */
+/* ============================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* Desktop menu */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #e74c3c;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e74c3c;
+}
+
+.btn-contact {
+    background: #e74c3c;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.35);
+}
+
+/* Hamburger Menu Button (Mobile only) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu – Hidden by default */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: #2c3e50;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transition: right 0.4s ease;
+        padding: 5rem 2rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Hamburger animation - X when open */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Landscape mode on mobile phones */
+    @media (orientation: landscape) and (max-height: 500px) {
+        .nav-links {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: auto;
+            padding: 2rem;
+            max-width: none;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            height: auto;
+            background: rgba(44, 62, 80, 0.98);
+        }
+
+        .nav-links li {
+            margin: 0.8rem 1.5rem;
+        }
+
+        .menu-toggle {
+            display: none; /* Hide hamburger in landscape – show full menu */
+        }
+
+        .nav-links {
+            right: 0;
+            position: relative;
+        }
     }
 }

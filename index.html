@@ -3,22 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Printing & Crafting Shop - Makati</title>
+    <title>Your Printing & Crafting Shop</title>
     <meta
       name="description"
-      content="Quality printing services and custom crafts in Makati. Tarpaulin, stickers, t-shirts, invitations, personalized gifts and more!"
+      content="Quality printing services and custom crafts. Tarpaulin, stickers, t-shirts, invitations, personalized gifts and more!"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Navigation Menu -->
-    <nav>
-      <div class="logo">Mads Printing/Crafting Shop</div>
-      <ul>
+
+    <nav class="navbar">
+      <div class="logo">Mads <span>Printing & Crafting Shop</span></div>
+
+      <!-- Hamburger button (only visible on mobile) -->
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation links -->
+      <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#reviews">Customer Reviews</a></li>
+        <li><a href="#contact" class="btn-contact">Get Quote</a></li>
       </ul>
     </nav>
 
@@ -27,8 +39,8 @@
       <div class="hero-content">
         <h1>Quality Printing & Beautiful Crafts</h1>
         <p>
-          From tarpaulins, stickers, t-shirts to custom invitations and
-          personalized items — we bring your ideas to life!
+          From stickers, t-shirts to custom invitations and personalized items —
+          we bring your ideas to life!
         </p>
         <a href="#contact" class="btn">Get a Quote Now</a>
       </div>
@@ -38,17 +50,17 @@
       <div class="container">
         <h2>Our Services</h2>
         <p class="section-subtitle">
-          High-quality printing and custom crafting solutions in Makati
+          High-quality printing and custom crafting solutions
         </p>
 
         <div class="services-grid">
-          <div class="service-card">
+          <!-- <div class="service-card">
             <h3>Tarpaulin & Banners</h3>
             <p>
               Full-color, durable tarpaulins for events, businesses, and
               promotions. Fast turnaround!
             </p>
-          </div>
+          </div> -->
 
           <div class="service-card">
             <h3>Stickers & Labels</h3>
@@ -58,13 +70,13 @@
             </p>
           </div>
 
-          <div class="service-card">
+          <!-- <div class="service-card">
             <h3>T-Shirt Printing</h3>
             <p>
               DTF, heat transfer, silk screen — personalized shirts for teams,
               events, or personal use.
             </p>
-          </div>
+          </div> -->
 
           <div class="service-card">
             <h3>Invitations & Cards</h3>
@@ -92,7 +104,6 @@
       </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="gallery">
       <div class="container">
         <h2>Gallery</h2>
@@ -101,34 +112,122 @@
         </p>
 
         <div class="gallery-grid">
-          <!-- Replace these src with your own photos later! -->
-          <img
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8d9ah0QknKYq0myAwDi8eL5IxvpPershhISAQfRqkcZGy7fQSC-EjBkU7BFDLcQ6-uLK8abqLceO5b-iPtVy1e7AFMNJCwzTjLdi8gvkGC0SHOO5F1_0WYj6nFMY8ns6j04Qo5_uTNCzG/s1600/Tarpaulin+Printing+Services.jpg"
-            alt="Tarpaulin Printing Example"
-          />
-          <img
-            src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1199177868893323"
-            alt="Custom Stickers & Prints"
-          />
-          <img
-            src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=934661139272393"
-            alt="Various Printing Services"
-          />
-          <img
-            src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=809234081987752"
-            alt="Tarpaulin On-hand"
-          />
-          <img
-            src="https://papemelroti.com/cdn/shop/files/21.jpg?v=1743585975"
-            alt="Custom Crafted Gifts"
-          />
-          <img
-            src="https://i.etsystatic.com/33699266/r/il/ae4053/4520431121/il_570xN.4520431121_4szo.jpg"
-            alt="Handmade Personalized Item"
-          />
+          <div class="gallery-item">
+            <img
+              src="/image/images (1).png"
+              alt="Custom Vinyl Stickers & Labels"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="/image/images..png"
+              alt="Product Stickers & Packaging Labels"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="/image/images.png"
+              alt="Personalized Waterproof Mugs & Name Items"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="/image/imagesa.png"
+              alt="Custom Christmas Gifts - Mugs & Tumblers"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Mads Printing/Crafting Shop</h2>
+        <p class="section-subtitle">
+          Bringing Your Ideas to Life in [ Your Region] Since [Year You Started,
+          e.g., 2020]
+        </p>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Welcome to Mads Printing/Crafting Shop! We're a small, family-run
+              business based in [ Your Region], passionate about turning your
+              creative ideas into high-quality prints and custom crafts.
+            </p>
+            <p>
+              Started with just a dream and a few machines, we've grown into
+              your go-to spot for affordable stickers, invitations, personalized
+              gifts, mugs, tumblers, and more. We use modern printing tech
+              combined with careful hand-finishing to ensure every order looks
+              perfect — whether it's a rush job for an event or a special custom
+              piece for your loved ones.
+            </p>
+            <p>
+              What sets us apart? Fast turnaround, friendly service, and prices
+              that won't break the bank. We treat every customer like family
+              because we know how important your projects are!
+            </p>
+            <p>
+              Thank you for supporting local! Let's create something amazing
+              together.
+            </p>
+          </div>
+
+          <!-- Optional: Add a photo of your shop/team -->
+          <div class="about-image">
+            <img
+              src="./image/Mads-Printing-Shop.png"
+              alt="Mads Printing Shop Team"
+              style="
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+              "
+            />
+            <!-- Replace with your real photo later! -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <h2>What Our Customers Say</h2>
+        <p class="section-subtitle">Real stories from happy clients</p>
+
+        <div class="reviews-grid">
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Very accommodating staff. Helped me with design suggestions for
+              our wedding invitations. Quality is top-notch!"
+            </p>
+            <div class="reviewer">- Maria L., Fairview</div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Custom tumblers and mugs for our family reunion turned out
+              beautiful. Fast service, friendly team. Highly recommended!"
+            </p>
+            <div class="reviewer">- John P., Cubao</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
@@ -191,10 +290,7 @@
     <!-- Footer -->
     <footer>
       <div class="container">
-        <p>
-          &copy; 2026 Your Printing & Crafting Shop - Makati. All Rights
-          Reserved.
-        </p>
+        <p>&copy; 2026 Your Printing & Crafting Shop. All Rights Reserved.</p>
         <p>Quality Prints & Custom Crafts | Serving Metro Manila</p>
       </div>
     </footer>
