@@ -138,21 +138,54 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     });
 });
 
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menuToggle');
+// Mobile Hamburger Menu
+const hamburgerBtn = document.getElementById('hamburgerBtn');
 const navLinks = document.getElementById('navLinks');
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
+if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
 
-    // Close menu when clicking a link (good UX)
+    // Close on link click
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
             navLinks.classList.remove('active');
         });
     });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+            hamburgerBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
 }
+
+// Scroll effect (shrink navbar)
+window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// Active link on scroll (optional but very user-friendly)
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
